@@ -10,6 +10,8 @@ Then use as you wish
 
 ```ruby
 # probably in a console, though doesn't have to be
+require 'open_source' # not needed if it's in your Gemfile, and this environment is loaded by bundler
+
 open_source "User" # opens file where User class is defined
 oso User           # same as above; use the aliases for ease of use!
 oso Authenticable  # opens file where Authenticable module is defined
