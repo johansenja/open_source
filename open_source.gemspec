@@ -3,7 +3,7 @@
 require_relative "lib/open_source/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "open_source"
+  spec.name          = "open_source_location"
   spec.version       = OpenSource::VERSION
   spec.authors       = ["Joseph Johansen"]
   spec.email         = ["joe@stotles.com"]

@@ -26,7 +26,7 @@ Line numbers are supported too, currently for Vi and VsCode.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'open_source'
+gem 'open_source_location'
 ```
 
 And then execute:
@@ -35,7 +35,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install open_source
+    $ gem install open_source_location
 
 
 ## Development
