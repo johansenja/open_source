@@ -16,6 +16,7 @@ oso Authenticable  # opens file where Authenticable module is defined
 oso :log           # opens file where "log" method is defined
 oso "log"          # same
 oso method :log    # you get the idea
+oso Rails.method(:application)
 oso User.instance_method(:name)
 ```
 
@@ -26,7 +27,7 @@ Line numbers are supported too, currently for Vi and VsCode.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'open_source_location'
+gem 'open_source_location', require: "open_source"
 ```
 
 And then execute:
@@ -37,6 +38,7 @@ Or install it yourself as:
 
     $ gem install open_source_location
 
+Just make sure you then `require 'open_source'` where you need it.
 
 ## Development
 
