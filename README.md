@@ -34,8 +34,8 @@ For example:
 
 ```bash
 # .bashrc or wherever
-EDITOR=vim                  # standard terminal based editor
-OPEN_SOURCE_GEM_EDITOR=gvim # a GUI version; opens in a different window. Takes priority over EDITOR
+export EDITOR=vim                  # standard terminal based editor
+export OPEN_SOURCE_GEM_EDITOR=gvim # a GUI version; opens in a different window. Takes priority over EDITOR
 ```
 
 This is optional, and if you normally use a GUI editor anyway it probably won't be needed.
