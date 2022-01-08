@@ -75,13 +75,13 @@ module OpenSource
     end
 
     def get_command(file, line)
-      editor = ENV["EDITOR"]
+      editor = ENV["OPEN_SOURCE_GEM_EDITOR"] || ENV["EDITOR"]
 
       # different editors handle going to specific lines differently
       case editor
       when nil
         raise NoEditorError, "the EDITOR env variable must be set to use this feature"
-      when /\s?n?vim?(\s|\z)/
+      when /\s?(?:n|m|g)?vim?(\s|\z)/
         [editor, "+#{line}", file]
       when /\s?code(\s|\z)/
         [editor, "--goto", "#{file}:#{line}"]

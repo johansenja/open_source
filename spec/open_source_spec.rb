@@ -109,5 +109,41 @@ RSpec.describe OpenSource do
         end
       end
     end
+
+    context "for a different editor to EDITOR" do
+      before { ENV["EDITOR"], ENV["OPEN_SOURCE_GEM_EDITOR"] = "vim", "mvim" }
+      after { ENV["OPEN_SOURCE_GEM_EDITOR"] = nil }
+
+      it "priorities OPEN_SOURCE_GEM_EDITOR over EDITOR" do
+        expect(OpenSource::Utils::Runner).to receive(:run).with("mvim", "+7", TESTING_FILE_PATH)
+        open_source("TestingModule")
+      end
+    end
+
+    context "for vim variations" do
+      it "treats nvim like vim" do
+        ENV["EDITOR"] = "nvim"
+        expect(OpenSource::Utils::Runner).to receive(:run).with("nvim", "+7", TESTING_FILE_PATH)
+        open_source("TestingModule")
+      end
+
+      it "treats vi like vim" do
+        ENV["EDITOR"] = "vi"
+        expect(OpenSource::Utils::Runner).to receive(:run).with("vi", "+7", TESTING_FILE_PATH)
+        open_source("TestingModule")
+      end
+
+      it "treats mvim like vim" do
+        ENV["EDITOR"] = "mvim"
+        expect(OpenSource::Utils::Runner).to receive(:run).with("mvim", "+7", TESTING_FILE_PATH)
+        open_source("TestingModule")
+      end
+
+      it "treats gvim like vim" do
+        ENV["EDITOR"] = "gvim"
+        expect(OpenSource::Utils::Runner).to receive(:run).with("gvim", "+7", TESTING_FILE_PATH)
+        open_source("TestingModule")
+      end
+    end
   end
 end

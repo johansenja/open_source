@@ -24,6 +24,22 @@ oso User.instance_method(:name)
 
 Line numbers are supported too, currently for Vi and VsCode.
 
+### Configuration
+
+#### Using a specific editor for this gem
+
+It's possible to use the `OPEN_SOURCE_GEM_EDITOR` env variable to set a specific editor for use with this gem, if you don't want to use your standard `EDITOR`.
+
+For example:
+
+```bash
+# .bashrc or wherever
+EDITOR=vim                  # standard terminal based editor
+OPEN_SOURCE_GEM_EDITOR=gvim # a GUI version; opens in a different window. Takes priority over EDITOR
+```
+
+This is optional, and if you normally use a GUI editor anyway it probably won't be needed.
+
 ## Installation
 
 Add this line to your application's Gemfile:
